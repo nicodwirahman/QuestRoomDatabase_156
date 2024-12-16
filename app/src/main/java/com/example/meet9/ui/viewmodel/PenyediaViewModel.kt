@@ -2,6 +2,7 @@ package com.example.meet9.ui.viewmodel
 
 import android.text.Spannable.Factory
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.ViewModelFactoryDsl
 import androidx.lifecycle.viewmodel.initializer
@@ -18,6 +19,12 @@ object PenyediaViewModel{
         initializer {
             HomeMhsViewModel(
                 krsApp().containerApp.repositoryMhs
+            )
+        }
+        initializer {
+            DetailMhsViewModel(
+                createSavedStateHandle(),
+                krsApp().containerApp.repositoryMhs,
             )
         }
     }
