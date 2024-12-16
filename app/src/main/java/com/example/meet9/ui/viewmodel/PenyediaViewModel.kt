@@ -15,8 +15,14 @@ object PenyediaViewModel{
                 KrsApp().containerApp.repositoryMhs
             )
         }
+        initializer {
+            HomeMhsViewModel(
+                krsApp().containerApp.repositoryMhs
+            )
+        }
     }
 }
 
 fun CreationExtras.krsApp(): KrsApp =
     (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as KrsApp)
+
