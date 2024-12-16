@@ -31,11 +31,17 @@ import com.example.meet9.ui.viewmodel.MahasiswaViewModel
 import com.example.meet9.ui.viewmodel.MhsUIState
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.meet9.ui.costumwidget.costumTopAppBar
+import com.example.meet9.ui.navigation.AlamatNavigasi
 import com.example.meet9.ui.viewmodel.PenyediaViewModel
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 
-object DestinasiInsert
+
+object DestinasiInsert : AlamatNavigasi{
+    override val route: String = "insert_mhs"
+}
+
+
 @Composable
 fun InsertMhsView(
     onBack: () -> Unit,
