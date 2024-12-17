@@ -32,7 +32,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.meet9.data.entity.Mahasiswa
-import com.example.meet9.ui.costumwidget.CostumTopAppBar
+
+import com.example.meet9.ui.costumwidget.CustomTopAppBar
 import com.example.meet9.ui.viewmodel.DetailMhsViewModel
 import com.example.meet9.ui.viewmodel.DetailUiState
 import com.example.meet9.ui.viewmodel.PenyediaViewModel
@@ -48,7 +49,7 @@ fun DetailMhsView(
 ){
     Scaffold (
         topBar = {
-            CostumTopAppBar(
+            CustomTopAppBar(
                 judul = "Detail Mahasiswa",
                 showBackButton = true,
                 onBack = onBack,
@@ -167,7 +168,7 @@ fun ItemDetailMhs(
             Spacer(modifier = Modifier.padding(4.dp))
             ComponentDetailMhs(judul = "Alamat", isinya = mahasiswa.alamat)
             Spacer(modifier = Modifier.padding(4.dp))
-            ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jeniskelamin)
+            ComponentDetailMhs(judul = "Jenis Kelamin", isinya = mahasiswa.jenisKelamin)
             Spacer(modifier = Modifier.padding(4.dp))
             ComponentDetailMhs(judul = "Kelas", isinya = mahasiswa.kelas)
             Spacer(modifier = Modifier.padding(4.dp))

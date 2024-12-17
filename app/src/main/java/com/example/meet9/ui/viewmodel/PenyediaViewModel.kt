@@ -13,24 +13,24 @@ object PenyediaViewModel{
     val Factory = viewModelFactory {
         initializer {
             MahasiswaViewModel(
-                KrsApp().containerApp.repositoryMhs
+                KrsApp().containerApp.RepositoryMhs
             )
         }
         initializer {
             HomeMhsViewModel(
-                krsApp().containerApp.repositoryMhs
+                krsApp().containerApp.RepositoryMhs
             )
         }
         initializer {
             DetailMhsViewModel(
                 createSavedStateHandle(),
-                krsApp().containerApp.repositoryMhs,
+                krsApp().containerApp.RepositoryMhs,
             )
         }
         initializer {
             UpdateMhsViewModel(
                 createSavedStateHandle(),
-                krsApp().containerApp.repositoryMhs
+                krsApp().containerApp.RepositoryMhs
             )
         }
     }

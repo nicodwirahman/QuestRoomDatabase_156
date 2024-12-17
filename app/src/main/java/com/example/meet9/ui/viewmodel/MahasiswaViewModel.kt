@@ -102,7 +102,7 @@ class MahasiswaViewModel (private val repositoryMhs: RepositoryMhs) : ViewModel(
     fun MahasiswaEvent.toMahasiswaEntity(): Mahasiswa = Mahasiswa(
         nim = nim,
         nama = nama,
-        jeniskelamin = jenisKelamin,
+        jenisKelamin = jenisKelamin,
         alamat = alamat,
         kelas = kelas,
         angkatan = angkatan

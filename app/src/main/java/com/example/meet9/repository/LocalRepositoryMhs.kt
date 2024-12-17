@@ -4,10 +4,10 @@ import com.example.meet9.data.dao.MahasiswaDao
 import com.example.meet9.data.entity.Mahasiswa
 import kotlinx.coroutines.flow.Flow
 
-abstract class LocalRepositoryMhs
-    (private val mahasiswaDao: MahasiswaDao)  : RepositoryMhs
-{
-    override suspend fun InsertMhs(mahasiswa: Mahasiswa) {
+class LocalRepositoryMhs(private val mahasiswaDao: MahasiswaDao) : RepositoryMhs {
+
+
+    override suspend fun insertMHS(mahasiswa: Mahasiswa) {
         mahasiswaDao.insertMahasiswa(mahasiswa)
     }
 
@@ -26,8 +26,6 @@ abstract class LocalRepositoryMhs
     override suspend fun updateMhs(mahasiswa: Mahasiswa) {
         mahasiswaDao.updateMahasiswa(mahasiswa)
     }
-
 }
-
 
 

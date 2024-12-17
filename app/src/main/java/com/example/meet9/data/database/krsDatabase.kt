@@ -11,27 +11,25 @@ import kotlinx.coroutines.internal.synchronized
 
 //Mendefinisikan database dengan tabel Mahasiswa
 @Database(entities = [Mahasiswa::class], version = 1, exportSchema = false)
-abstract class krsDatabase : RoomDatabase(){
+abstract class KrsDatabase : RoomDatabase() {
 
-    //Mendefinisikan fungsi untuk mengakses data Mahasiswa
+    //Mendefinisikan fungsi untuk mengakses data mahasiswa
     abstract fun mahasiswaDao(): MahasiswaDao
 
-
     companion object{
-        @Volatile //Memastikan bahwa nilai variabel Instance selalu sama di
-        private var Instance: krsDatabase? = null
+        @Volatile // Memastikan bahwa nilai variabel Istance selalu sama di
+        private var Instance: KrsDatabase? = null
 
         @OptIn(InternalCoroutinesApi::class)
-        fun getDatabase(context: Context): krsDatabase{
+        fun getDatabase(context: Context): KrsDatabase{
             return (Instance ?: synchronized(this){
                 Room.databaseBuilder(
                     context.applicationContext,
-                    krsDatabase::class.java,
-                    "krsdatabase"
-             )
+                    KrsDatabase::class.java, //Class Database
+                    "KrsDatabase"//Nama Database
+                )
                     .build().also { Instance = it }
-
-                })
+            })
         }
     }
 }

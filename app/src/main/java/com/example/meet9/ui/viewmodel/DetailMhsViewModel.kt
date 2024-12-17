@@ -5,7 +5,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.meet9.data.entity.Mahasiswa
 import com.example.meet9.repository.RepositoryMhs
-import com.example.meet9.ui.navigation.DestinasiDetail
+
+import com.example.mvvmdengandatabase.ui.navigation.DestinasiDetail
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -79,7 +80,7 @@ data class DetailUiState(
         return MahasiswaEvent(
             nim = nim,
             nama = nama,
-            jenisKelamin = jeniskelamin,
+            jenisKelamin = jenisKelamin,
             alamat = alamat,
             kelas = kelas,
             angkatan = angkatan
